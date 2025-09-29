@@ -1,0 +1,307 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Faturamento_pagamento`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Faturamento_pagamento` (
+  `id_pagamento` INT NOT NULL AUTO_INCREMENT,
+  `detalhe_transa` TEXT NOT NULL,
+  `data_pag` DATETIME NOT NULL,
+  PRIMARY KEY (`id_pagamento`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Entrevista_avaliação`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Entrevista_avaliação` (
+  `id_entrevista` INT NOT NULL AUTO_INCREMENT,
+  `avaliacao` TEXT NOT NULL,
+  `feedback` TEXT NOT NULL,
+  `nota` INT NOT NULL,
+  PRIMARY KEY (`id_entrevista`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`feedback_avaliação_emp`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`feedback_avaliação_emp` (
+  `id_ava` INT NOT NULL AUTO_INCREMENT,
+  `comentario` VARCHAR(100) NOT NULL,
+  `classificacao` INT NOT NULL,
+  `data_ava` DATE NOT NULL,
+  PRIMARY KEY (`id_ava`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Vagas_emprego`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Vagas_emprego` (
+  `id_vaga` INT NOT NULL AUTO_INCREMENT,
+  `cargo` VARCHAR(45) NOT NULL,
+  `desc_func` TEXT NOT NULL,
+  `Local_trab` VARCHAR(45) NOT NULL,
+  `vagas_disp` INT NOT NULL,
+  `id_entrevista` INT NOT NULL,
+  `id_ava` INT NOT NULL,
+  PRIMARY KEY (`id_vaga`),
+  INDEX `id_entrevista_idx` (`id_entrevista` ASC) VISIBLE,
+  INDEX `id_ava_idx` (`id_ava` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Profissionais`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Profissionais` (
+  `id_profissionais` INT NOT NULL AUTO_INCREMENT,
+  `profissao` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(70) NOT NULL,
+  `dataNasc` DATE NOT NULL,
+  `id_pagamento` INT NOT NULL,
+  `id_vaga` INT NOT NULL,
+  PRIMARY KEY (`id_profissionais`),
+  INDEX `id_pagamento_idx` (`id_pagamento` ASC) VISIBLE,
+  INDEX `id_vaga_idx` (`id_vaga` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Endereço`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Endereço` (
+  `id_Endereço` INT NOT NULL AUTO_INCREMENT,
+  `cidade` VARCHAR(45) NOT NULL,
+  `rua` VARCHAR(60) NOT NULL,
+  `numero` INT NOT NULL,
+  `complemento` VARCHAR(60) NOT NULL,
+  `bairro` VARCHAR(45) NOT NULL,
+  `uf` VARCHAR(5) NOT NULL,
+  `id_profissionais` INT NOT NULL,
+  PRIMARY KEY (`id_Endereço`),
+  INDEX `id_profissionais_idx` (`id_profissionais` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Telefone`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Telefone` (
+  `id_telefone` INT NOT NULL AUTO_INCREMENT,
+  `numero_tel` VARCHAR(20) NOT NULL,
+  `id_profissionais` INT NOT NULL,
+  PRIMARY KEY (`id_telefone`),
+  INDEX `id_profissionais_idx` (`id_profissionais` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Habilidades`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Habilidades` (
+  `id_habilidades` INT NOT NULL AUTO_INCREMENT,
+  `descricao_hab` TEXT NOT NULL,
+  `id_profissionais` INT NOT NULL,
+  PRIMARY KEY (`id_habilidades`),
+  INDEX `id_profissionais_idx` (`id_profissionais` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Contrato_temporário`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Contrato_temporário` (
+  `id_contrato` INT NOT NULL AUTO_INCREMENT,
+  `data_inicio` DATE NOT NULL,
+  `data_fim` DATE NOT NULL,
+  `valor_hora` DECIMAL(5,2) NOT NULL,
+  PRIMARY KEY (`id_contrato`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Profissionais_env`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Profissionais_env` (
+  `id_envolvidos` INT NOT NULL AUTO_INCREMENT,
+  `profissionais_env` VARCHAR(45) NOT NULL,
+  `id_profissionais` INT NOT NULL,
+  `id_contrato` INT NOT NULL,
+  PRIMARY KEY (`id_envolvidos`),
+  INDEX `id_profissionais_idx` (`id_profissionais` ASC) VISIBLE,
+  INDEX `id_contrato_idx` (`id_contrato` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Status`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Status` (
+  `id_status` INT NOT NULL AUTO_INCREMENT,
+  `Status` VARCHAR(25) NOT NULL,
+  `id_contrato` INT NOT NULL,
+  PRIMARY KEY (`id_status`),
+  INDEX `id_contrato_idx` (`id_contrato` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Reg_Histórico`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Reg_Histórico` (
+  `id_registro` INT NOT NULL AUTO_INCREMENT,
+  `valor_pago` DECIMAL(11,2) NOT NULL,
+  `data` DATE NOT NULL,
+  `empresas` VARCHAR(45) NOT NULL,
+  `id_contrato` INT NOT NULL,
+  PRIMARY KEY (`id_registro`),
+  INDEX `id_contrato_idx` (`id_contrato` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Empresas_clientes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Empresas_clientes` (
+  `cnpj` VARCHAR(18) NOT NULL,
+  `rep_legal` VARCHAR(45) NOT NULL,
+  `nome_emp` VARCHAR(45) NOT NULL,
+  `id_contrato` INT NOT NULL,
+  PRIMARY KEY (`cnpj`),
+  INDEX `id_contrato_idx` (`id_contrato` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Endereço_emp`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Endereço_emp` (
+  `id_endereco` INT NOT NULL AUTO_INCREMENT,
+  `UF` VARCHAR(5) NOT NULL,
+  `cidade` VARCHAR(25) NOT NULL,
+  `rua` VARCHAR(45) NOT NULL,
+  `numero` INT NOT NULL,
+  `bairro` VARCHAR(45) NOT NULL,
+  `complemento` VARCHAR(45) NOT NULL,
+  `cnpj` VARCHAR(18) NOT NULL,
+  PRIMARY KEY (`id_endereco`),
+  INDEX `cnpj_idx` (`cnpj` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Info_contato`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Info_contato` (
+  `id_contato` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(80) NOT NULL,
+  `celular` INT NOT NULL,
+  `cnpj` VARCHAR(18) NOT NULL,
+  PRIMARY KEY (`id_contato`),
+  INDEX `cnpj_idx` (`cnpj` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Mete_pag`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Mete_pag` (
+  `id_metodo` INT NOT NULL AUTO_INCREMENT,
+  `forma_pag` VARCHAR(45) NOT NULL,
+  `id_pagamento` INT NOT NULL,
+  PRIMARY KEY (`id_metodo`),
+  INDEX `id_pagamento_idx` (`id_pagamento` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Pagamento`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Pagamento` (
+  `cnpj` VARCHAR(18) NOT NULL,
+  `id_pagamento` INT NOT NULL,
+  `id_contrato` INT NOT NULL,
+  PRIMARY KEY (`cnpj`, `id_pagamento`, `id_contrato`),
+  INDEX `id_pagamento_idx` (`id_pagamento` ASC) VISIBLE,
+  INDEX `id_contrato_idx` (`id_contrato` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Requisitos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Requisitos` (
+  `id_requisitos` INT NOT NULL AUTO_INCREMENT,
+  `formacao` TEXT NOT NULL,
+  `experiencia` TEXT NULL,
+  `curso_complementar` VARCHAR(60) NULL,
+  `id_vaga` INT NOT NULL,
+  PRIMARY KEY (`id_requisitos`),
+  INDEX `id_vaga_idx` (`id_vaga` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Agendamento_entrevista`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Agendamento_entrevista` (
+  `id_agen` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id_agen`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Locais`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Locais` (
+  `id_local` INT NOT NULL AUTO_INCREMENT,
+  `Local` TEXT NOT NULL,
+  `id_agen` INT NOT NULL,
+  PRIMARY KEY (`id_local`),
+  INDEX `id_agen_idx` (`id_agen` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Locais`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Locais` (
+  `id_local` INT NOT NULL AUTO_INCREMENT,
+  `Local` TEXT NOT NULL,
+  `id_agen` INT NOT NULL,
+  PRIMARY KEY (`id_local`),
+  INDEX `id_agen_idx` (`id_agen` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`data_entrevista`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`data_entrevista` (
+  `data/hora` DATETIME NOT NULL,
+  `id_agen` INT NOT NULL,
+  `id_entrevista` INT NOT NULL,
+  PRIMARY KEY (`id_agen`, `id_entrevista`),
+  INDEX `id_entrevista_idx` (`id_entrevista` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
