@@ -1,0 +1,42 @@
+-- DDL - ALTER - TADS049 
+
+ALTER TABLE empresas_clientes
+  CHANGE COLUMN rep_legal rep_legal VARCHAR(150) NOT NULL
+	AFTER nome_emp;
+  
+ALTER TABLE telefone
+  CHANGE COLUMN numero_tel numero_tel VARCHAR(14) NOT NULL UNIQUE;
+
+ALTER TABLE profissionais
+	 ADD COLUMN RG VARCHAR(11) NOT NULL UNIQUE
+		AFTER dataNasc;
+        
+ALTER TABLE requisitos 
+	CHANGE COLUMN curso_complementar curso_complementar VARCHAR(250) NULL;
+
+ALTER TABLE endereço
+	CHANGE COLUMN complemento complemento VARCHAR(40) NULL;
+    
+ALTER TABLE mete_pag 
+	CHANGE COLUMN forma_pag forma_pag VARCHAR(60) NULL
+		AFTER id_pagamento;
+        
+ALTER TABLE profissionais_env 
+	CHANGE COLUMN profissionais_env profissionais_env VARCHAR(65) NOT NULL 
+		AFTER id_contrato;
+
+ALTER TABLE info_contato 
+	CHANGE COLUMN cnpj cnpj VARCHAR(18) NOT NULL
+		AFTER id_contato;
+
+ALTER TABLE endereço 
+	CHANGE COLUMN id_profissionais id_profissionais VARCHAR(50) NOT NULL
+		AFTER id_Endereço;
+
+ALTER TABLE contrato_temporário
+	CHANGE COLUMN data_fim data_fim DATETIME NOT NULL;
+    
+    
+-- DDL - DROP - TADS049 
+
+DROP DATABASE mydb;
