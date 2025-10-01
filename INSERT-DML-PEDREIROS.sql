@@ -114,26 +114,28 @@ insert into endereço values ("23", "Palmas", "Rua dos Lírios", "45", "em frent
 insert into endereço values ("24", "Rio Branco", "Rua das Palmeiras", "70", "próximo ao fórum", "Bosque", "AC", "24");
 insert into endereço values ("25", "Porto Velho", "Avenida Central", "150", "perto do parque", "Caiari", "RO", "25");
 
-INSERT INTO endereço_emp VALUES ("1", "PE", "recife", "alto do leonardo", "399", "nova descoberta", "apos a barraca", "45.435.234/0001-56");
-INSERT INTO endereço_emp VALUES ('2', 'UFPE', 'Jaboatão dos Guararapes', 'Avenida Central', '456', 'Cavaleiro', 'ao lado do Mercado Municipal', '45.435.234/0001-56');
-INSERT INTO endereço_emp VALUES ('3', 'UFPE', 'Caruaru', 'Rua das Flores', '789', 'Centro', 'em frente à Praça de Alimentação', '56.546.345/0001-67');
-INSERT INTO endereço_emp VALUES ('4', 'UFPE', 'Petrolina', 'Rua do Rio', '321', 'Bancários', 'próximo à ponte do Rio São Francisco', '67.657.456/0001-78');
-INSERT INTO endereço_emp VALUES ('5', 'UFPE', 'Garanhuns', 'Avenida dos Eucaliptos', '654', 'Heliópolis', 'em frente à estação rodoviária', '78.768.567/0001-89');
-INSERT INTO endereço_emp VALUES ('6', 'UFPE', 'Igarassu', 'Rua São José', '987', 'Centro', 'ao lado da Catedral de Igarassu', '89.879.678/0001-90');
-INSERT INTO endereço_emp VALUES ('7', 'UFPE', 'Gravatá', 'Rua da Serra', '234', 'Pico do Papagaio', 'perto da entrada da cidade', '90.980.789/0001-12');
-INSERT INTO endereço_emp VALUES ('8', 'UFPE', 'Escada', 'Rua do Comércio', '345', 'Centro', 'ao lado da prefeitura', '12.091.890/0001-23');
-INSERT INTO endereço_emp VALUES ('9', 'UFPE', 'Cabo de Santo Agostinho', 'Avenida das Ondas', '567', 'Praia do Paiva', 'perto do posto de gasolina', '23.202.901/0001-34');
-INSERT INTO endereço_emp VALUES ('10', 'UFPE', 'São Lourenço da Mata', 'Rua do Parque', '678', 'Jardim São Paulo', 'em frente ao parque de eventos', '34.313.012/0001-45');
-INSERT INTO endereço_emp VALUES ('11', 'UFPE', 'Vitória de Santo Antão', 'Rua do Carroção', '789', 'Centro', 'ao lado da Praça da Matriz', '45.424.123/0001-56');
-INSERT INTO endereço_emp VALUES ('12', 'UFPE', 'Limoeiro', 'Rua Nova', '890', 'Centro', 'perto do terminal de ônibus', '56.535.234/0001-67');
-INSERT INTO endereço_emp VALUES ('13', 'UFPE', 'Bezerros', 'Rua do Cacimbão', '101', 'Centro', 'próximo ao Mercado Público', '67.646.345/0001-78');
-INSERT INTO endereço_emp VALUES ('14', 'UFPE', 'Arcoverde', 'Avenida Padre Diniz', '112', 'Boa Vista', 'perto da Igreja Matriz', '78.757.456/0001-89');
-INSERT INTO endereço_emp VALUES ('15', 'UFPE', 'Paudalho', 'Rua Santa Maria', '123', 'Centro', 'ao lado do Hospital Regional', '89.868.567/0001-90');
-INSERT INTO endereço_emp VALUES ('16', 'UFPE', 'Santa Cruz do Capibaribe', 'Rua das Acácias', '234', 'Santo Amaro', 'em frente ao terminal de passageiros', '90.979.678/0001-12');
-INSERT INTO endereço_emp VALUES ('17', 'UFPE', 'Araripina', 'Rua do Sertão', '345', 'Centro', 'próximo ao Mercado Municipal', '12.090.789/0001-23');
-INSERT INTO endereço_emp VALUES ('18', 'UFPE', 'Afogados da Ingazeira', 'Avenida Central', '456', 'Centro', 'perto da Praça de Eventos', '23.201.890/0001-34');
-INSERT INTO endereço_emp VALUES ('19', 'UFPE', 'Flores', 'Rua da Palmeira', '567', 'Centro', 'em frente ao terminal rodoviário', '34.312.901/0001-45');
-INSERT INTO endereço_emp VALUES ('20', 'UFPE', 'Serra Talhada', 'Rua da Igreja', '678', 'Centro', 'ao lado do Hospital Regional', '45.423.012/0001-56');
+INSERT INTO endereço_emp VALUES ('1', 'PE', 'Recife', 'Alto do Leonardo', '399', 'Nova Descoberta', 'Apos a barraca', '45.435.234/0001-56');
+INSERT INTO endereço_emp VALUES ('2', 'PE', 'Jaboatão dos Guararapes', 'Avenida Central', '456', 'Cavaleiro', 'Ao lado do Mercado Municipal', '45.435.234/0001-56');
+INSERT INTO endereço_emp VALUES ('3', 'PE', 'Caruaru', 'Rua das Flores', '789', 'Centro', 'Em frente à Praça de Alimentação', '56.546.345/0001-67');
+INSERT INTO endereço_emp VALUES ('4', 'PE', 'Petrolina', 'Rua do Rio', '321', 'Bancários', 'Próximo à ponte do Rio São Francisco', '67.657.456/0001-78');
+INSERT INTO endereço_emp VALUES ('5', 'PE', 'Garanhuns', 'Avenida dos Eucaliptos', '654', 'Heliópolis', 'Em frente à estação rodoviária', '78.768.567/0001-89');
+INSERT INTO endereço_emp VALUES ('6', 'PE', 'Igarassu', 'Rua São José', '987', 'Centro', 'Ao lado da Catedral de Igarassu', '89.879.678/0001-90');
+INSERT INTO endereço_emp VALUES ('7', 'PE', 'Gravatá', 'Rua da Serra', '234', 'Pico do Papagaio', 'Perto da entrada da cidade', '90.980.789/0001-12');
+INSERT INTO endereço_emp VALUES ('8', 'PE', 'Escada', 'Rua do Comércio', '345', 'Centro', 'Ao lado da prefeitura', '12.091.890/0001-23');
+INSERT INTO endereço_emp VALUES ('9', 'PE', 'Cabo de Santo Agostinho', 'Avenida das Ondas', '567', 'Praia do Paiva', 'Perto do posto de gasolina', '23.202.901/0001-34');
+INSERT INTO endereço_emp VALUES ('10', 'PE', 'São Lourenço da Mata', 'Rua do Parque', '678', 'Jardim São Paulo', 'Em frente ao parque de eventos', '34.313.012/0001-45');
+INSERT INTO endereço_emp VALUES ('11', 'PE', 'Vitória de Santo Antão', 'Rua do Carroção', '789', 'Centro', 'Ao lado da Praça da Matriz', '45.424.123/0001-56');
+INSERT INTO endereço_emp VALUES ('12', 'PE', 'Limoeiro', 'Rua Nova', '890', 'Centro', 'Perto do terminal de ônibus', '56.535.234/0001-67');
+INSERT INTO endereço_emp VALUES ('13', 'PE', 'Bezerros', 'Rua do Cacimbão', '101', 'Centro', 'Próximo ao Mercado Público', '67.646.345/0001-78');
+INSERT INTO endereço_emp VALUES ('14', 'PE', 'Arcoverde', 'Avenida Padre Diniz', '112', 'Boa Vista', 'Perto da Igreja Matriz', '78.757.456/0001-89');
+INSERT INTO endereço_emp VALUES ('15', 'PE', 'Paudalho', 'Rua Santa Maria', '123', 'Centro', 'Ao lado do Hospital Regional', '89.868.567/0001-90');
+INSERT INTO endereço_emp VALUES ('16', 'PE', 'Santa Cruz do Capibaribe', 'Rua das Acácias', '234', 'Santo Amaro', 'Em frente ao terminal de passageiros', '90.979.678/0001-12');
+INSERT INTO endereço_emp VALUES ('17', 'PE', 'Araripina', 'Rua do Sertão', '345', 'Centro', 'Próximo ao Mercado Municipal', '12.090.789/0001-23');
+INSERT INTO endereço_emp VALUES ('18', 'PE', 'Afogados da Ingazeira', 'Avenida Central', '456', 'Centro', 'Perto da Praça de Eventos', '23.201.890/0001-34');
+INSERT INTO endereço_emp VALUES ('19', 'PE', 'Flores', 'Rua da Palmeira', '567', 'Centro', 'Em frente ao terminal rodoviário', '34.312.901/0001-45');
+INSERT INTO endereço_emp VALUES ('20', 'PE', 'Serra Talhada', 'Rua da Igreja', '678', 'Centro', 'Ao lado do Hospital Regional', '45.423.012/0001-56');
+
+
 
 insert into entrevista_avaliação values ("1", "bom candidato", "possivel aprovação", "8");
 insert into entrevista_avaliação values ("2", "candidato inseguro", "precisa de treinamento", "5");
@@ -260,6 +262,7 @@ INSERT INTO info_contato VALUES ('18', '23.234.567/0001-89', 'user18@hotmail.com
 INSERT INTO info_contato VALUES ('19', '34.345.678/0001-90', 'empresa19@gmail.com', '81998901235');
 INSERT INTO info_contato VALUES ('20', '45.456.789/0001-01', 'contato20@gmail.com', '81999012346');
 
+
 ALTER TABLE info_contato MODIFY celular VARCHAR(20);
 
 INSERT INTO locais VALUES ("1", "Rua Jaguarana", "1");
@@ -289,26 +292,29 @@ INSERT INTO locais VALUES ("24", "Rua Monte Alegre", "24");
 INSERT INTO locais VALUES ("25", "Rua do Progresso", "25");
 INSERT INTO locais VALUES ("26", "Avenida Central", "26");
 
-INSERT INTO mete_pag VALUES ('1', 'Pix', '1');
-INSERT INTO mete_pag VALUES ('2', 'Boleto', '2');
-INSERT INTO mete_pag VALUES ('3', 'Cartão de Crédito', '3');
-INSERT INTO mete_pag VALUES ('4', 'Cartão de Débito', '4');
-INSERT INTO mete_pag VALUES ('5', 'Transferência Bancária', '5');
-INSERT INTO mete_pag VALUES ('6', 'Transferência Bancária', '6');
-INSERT INTO mete_pag VALUES ('7', 'Débito Automático', '7');
-INSERT INTO mete_pag VALUES ('8', 'PayPal', '8');
-INSERT INTO mete_pag VALUES ('9', 'Apple Pay', '9');
-INSERT INTO mete_pag VALUES ('10', 'Google Pay', '10');
-INSERT INTO mete_pag VALUES ('11', 'Mercado Pago', '11');
-INSERT INTO mete_pag VALUES ('12', 'PagSeguro', '12');
-INSERT INTO mete_pag VALUES ('13', 'Cheque', '13');
-INSERT INTO mete_pag VALUES ('14', 'Dinheiro', '14');
-INSERT INTO mete_pag VALUES ('15', 'Voucher', '15');
-INSERT INTO mete_pag VALUES ('16', 'Carteira Digital', '16');
-INSERT INTO mete_pag VALUES ('17', 'Crédito Loja', '17');
-INSERT INTO mete_pag VALUES ('18', 'Parcelamento', '18');
-INSERT INTO mete_pag VALUES ('19', 'Depósito Bancário', '19');
-INSERT INTO mete_pag VALUES ('20', 'Transferência entre Contas', '20');
+INSERT INTO mete_pag VALUES ('1', '1', 'Pix');
+INSERT INTO mete_pag VALUES ('2', '2', 'Boleto');
+INSERT INTO mete_pag VALUES ('3', '3', 'Cartão de Crédito');
+INSERT INTO mete_pag VALUES ('4', '4', 'Cartão de Débito');
+INSERT INTO mete_pag VALUES ('5', '5', 'Transferência Bancária');
+INSERT INTO mete_pag VALUES ('6', '6', 'Transferência Bancária');
+INSERT INTO mete_pag VALUES ('7', '7', 'Débito Automático');
+INSERT INTO mete_pag VALUES ('8', '8', 'PayPal');
+INSERT INTO mete_pag VALUES ('9', '9', 'Apple Pay');
+INSERT INTO mete_pag VALUES ('10', '10', 'Google Pay');
+INSERT INTO mete_pag VALUES ('11', '11', 'Mercado Pago');
+INSERT INTO mete_pag VALUES ('12', '12', 'PagSeguro');
+INSERT INTO mete_pag VALUES ('13', '13', 'Cheque');
+INSERT INTO mete_pag VALUES ('14', '14', 'Dinheiro');
+INSERT INTO mete_pag VALUES ('15', '15', 'Voucher');
+INSERT INTO mete_pag VALUES ('16', '16', 'Carteira Digital');
+INSERT INTO mete_pag VALUES ('17', '17', 'Crédito Loja');
+INSERT INTO mete_pag VALUES ('18', '18', 'Parcelamento');
+INSERT INTO mete_pag VALUES ('19', '19', 'Depósito Bancário');
+INSERT INTO mete_pag VALUES ('20', '20', 'Transferência entre Contas');
+
+
+
 
 INSERT INTO pagamento VALUES ("34.567.890/0001-12", "1", "1");
 INSERT INTO pagamento VALUES ("12.345.678/0001-90", "2", "2");
@@ -338,47 +344,49 @@ INSERT INTO pagamento VALUES ("84.506.731/0001-53", "25", "25");
 INSERT INTO pagamento VALUES ("93.624.810/0001-14", "26", "26");
 
 
-INSERT INTO profissionais VALUES ('1', 'PEDREIRO', 'JOSE', '1990-02-01', '1', '1');
-INSERT INTO profissionais VALUES ('2', 'ELETRICISTA', 'MARIA', '1985-06-15', '2', '2');
-INSERT INTO profissionais VALUES ('3', 'ENCANADOR', 'CARLOS', '1992-09-10', '3', '3');
-INSERT INTO profissionais VALUES ('4', 'CARPINTEIRO', 'ANA', '1988-11-20', '4', '4');
-INSERT INTO profissionais VALUES ('5', 'MARCENEIRO', 'PAULO', '1991-03-05', '5', '5');
-INSERT INTO profissionais VALUES ('6', 'PEDREIRO', 'FERNANDO', '1987-07-12', '6', '6');
-INSERT INTO profissionais VALUES ('7', 'ELETRICISTA', 'SANDRA', '1993-01-25', '7', '7');
-INSERT INTO profissionais VALUES ('8', 'ENCANADOR', 'RICARDO', '1989-05-30', '8', '8');
-INSERT INTO profissionais VALUES ('9', 'CARPINTEIRO', 'LUCAS', '1990-12-18', '9', '9');
-INSERT INTO profissionais VALUES ('10', 'MARCENEIRO', 'JULIA', '1992-08-22', '10', '10');
-INSERT INTO profissionais VALUES ('11', 'PEDREIRO', 'ANTONIO', '1986-04-09', '11', '11');
-INSERT INTO profissionais VALUES ('12', 'ELETRICISTA', 'PAULA', '1985-10-17', '12', '12');
-INSERT INTO profissionais VALUES ('13', 'ENCANADOR', 'MARCOS', '1991-02-28', '13', '13');
-INSERT INTO profissionais VALUES ('14', 'CARPINTEIRO', 'RENATA', '1988-09-14', '14', '14');
-INSERT INTO profissionais VALUES ('15', 'MARCENEIRO', 'GUSTAVO', '1993-06-05', '15', '15');
-INSERT INTO profissionais VALUES ('16', 'PEDREIRO', 'CLÁUDIO', '1987-03-11', '16', '16');
-INSERT INTO profissionais VALUES ('17', 'ELETRICISTA', 'CARLA', '1990-07-19', '17', '17');
-INSERT INTO profissionais VALUES ('18', 'ENCANADOR', 'FELIPE', '1992-11-03', '18', '18');
-INSERT INTO profissionais VALUES ('19', 'CARPINTEIRO', 'VANESSA', '1989-01-27', '19', '19');
-INSERT INTO profissionais VALUES ('20', 'MARCENEIRO', 'DIEGO', '1991-05-16', '20', '20');
+INSERT INTO profissionais VALUES ('1', 'PEDREIRO', 'JOSE', '1990-02-01', '12.345.678-9', '1', '1');
+INSERT INTO profissionais VALUES ('2', 'ELETRICISTA', 'MARIA', '1985-06-15', '23.456.789-0', '2', '2');
+INSERT INTO profissionais VALUES ('3', 'ENCANADOR', 'CARLOS', '1992-09-10', '34.567.890-1', '3', '3');
+INSERT INTO profissionais VALUES ('4', 'CARPINTEIRO', 'ANA', '1988-11-20', '45.678.901-2', '4', '4');
+INSERT INTO profissionais VALUES ('5', 'MARCENEIRO', 'PAULO', '1991-03-05', '56.789.012-3', '5', '5');
+INSERT INTO profissionais VALUES ('6', 'PEDREIRO', 'FERNANDO', '1987-07-12', '67.890.123-4', '6', '6');
+INSERT INTO profissionais VALUES ('7', 'ELETRICISTA', 'SANDRA', '1993-01-25', '78.901.234-5', '7', '7');
+INSERT INTO profissionais VALUES ('8', 'ENCANADOR', 'RICARDO', '1989-05-30', '89.012.345-6', '8', '8');
+INSERT INTO profissionais VALUES ('9', 'CARPINTEIRO', 'LUCAS', '1990-12-18', '90.123.456-7', '9', '9');
+INSERT INTO profissionais VALUES ('10', 'MARCENEIRO', 'JULIA', '1992-08-22', '01.234.567-8', '10', '10');
+INSERT INTO profissionais VALUES ('11', 'PEDREIRO', 'ANTONIO', '1986-04-09', '11.223.344-5', '11', '11');
+INSERT INTO profissionais VALUES ('12', 'ELETRICISTA', 'PAULA', '1985-10-17', '22.334.455-6', '12', '12');
+INSERT INTO profissionais VALUES ('13', 'ENCANADOR', 'MARCOS', '1991-02-28', '33.445.566-7', '13', '13');
+INSERT INTO profissionais VALUES ('14', 'CARPINTEIRO', 'RENATA', '1988-09-14', '44.556.677-8', '14', '14');
+INSERT INTO profissionais VALUES ('15', 'MARCENEIRO', 'GUSTAVO', '1993-06-05', '55.667.788-9', '15', '15');
+INSERT INTO profissionais VALUES ('16', 'PEDREIRO', 'CLÁUDIO', '1987-03-11', '66.778.899-0', '16', '16');
+INSERT INTO profissionais VALUES ('17', 'ELETRICISTA', 'CARLA', '1990-07-19', '77.889.900-1', '17', '17');
+INSERT INTO profissionais VALUES ('18', 'ENCANADOR', 'FELIPE', '1992-11-03', '88.990.011-2', '18', '18');
+INSERT INTO profissionais VALUES ('19', 'CARPINTEIRO', 'VANESSA', '1989-01-27', '99.100.122-3', '19', '19');
+INSERT INTO profissionais VALUES ('20', 'MARCENEIRO', 'DIEGO', '1991-05-16', '10.987.654-4', '20', '20');
 
-INSERT INTO profissionais_env VALUES ("1", "PEDREIRO", "1", "1");
-INSERT INTO profissionais_env VALUES ("2", "ELETRICISTA", "2", "2");
-INSERT INTO profissionais_env VALUES ("3", "ENCANADOR", "3", "3");
-INSERT INTO profissionais_env VALUES ("4", "CARPINTEIRO", "4", "4");
-INSERT INTO profissionais_env VALUES ("5", "MARCENEIRO", "5", "5");
-INSERT INTO profissionais_env VALUES ("6", "PEDREIRO", "6", "6");
-INSERT INTO profissionais_env VALUES ("7", "ELETRICISTA", "7", "7");
-INSERT INTO profissionais_env VALUES ("8", "ENCANADOR", "8", "8");
-INSERT INTO profissionais_env VALUES ("9", "CARPINTEIRO", "9", "9");
-INSERT INTO profissionais_env VALUES ("10", "MARCENEIRO", "10", "10");
-INSERT INTO profissionais_env VALUES ("11", "PEDREIRO", "11", "11");
-INSERT INTO profissionais_env VALUES ("12", "ELETRICISTA", "12", "12");
-INSERT INTO profissionais_env VALUES ("13", "ENCANADOR", "13", "13");
-INSERT INTO profissionais_env VALUES ("14", "CARPINTEIRO", "14", "14");
-INSERT INTO profissionais_env VALUES ("15", "MARCENEIRO", "15", "15");
-INSERT INTO profissionais_env VALUES ("16", "PEDREIRO", "16", "16");
-INSERT INTO profissionais_env VALUES ("17", "ELETRICISTA", "17", "17");
-INSERT INTO profissionais_env VALUES ("18", "ENCANADOR", "18", "18");
-INSERT INTO profissionais_env VALUES ("19", "CARPINTEIRO", "19", "19");
-INSERT INTO profissionais_env VALUES ("20", "MARCENEIRO", "20", "20");
+
+INSERT INTO profissionais_env VALUES ("1", "1", "1", "PEDREIRO");
+INSERT INTO profissionais_env VALUES ("2", "2", "2", "ELETRICISTA");
+INSERT INTO profissionais_env VALUES ("3", "3", "3", "ENCANADOR");
+INSERT INTO profissionais_env VALUES ("4", "4", "4", "CARPINTEIRO");
+INSERT INTO profissionais_env VALUES ("5", "5", "5", "MARCENEIRO");
+INSERT INTO profissionais_env VALUES ("6", "6", "6", "PEDREIRO");
+INSERT INTO profissionais_env VALUES ("7", "7", "7", "ELETRICISTA");
+INSERT INTO profissionais_env VALUES ("8", "8", "8", "ENCANADOR");
+INSERT INTO profissionais_env VALUES ("9", "9", "9", "CARPINTEIRO");
+INSERT INTO profissionais_env VALUES ("10", "10", "10", "MARCENEIRO");
+INSERT INTO profissionais_env VALUES ("11", "11", "11", "PEDREIRO");
+INSERT INTO profissionais_env VALUES ("12", "12", "12", "ELETRICISTA");
+INSERT INTO profissionais_env VALUES ("13", "13", "13", "ENCANADOR");
+INSERT INTO profissionais_env VALUES ("14", "14", "14", "CARPINTEIRO");
+INSERT INTO profissionais_env VALUES ("15", "15", "15", "MARCENEIRO");
+INSERT INTO profissionais_env VALUES ("16", "16", "16", "PEDREIRO");
+INSERT INTO profissionais_env VALUES ("17", "17", "17", "ELETRICISTA");
+INSERT INTO profissionais_env VALUES ("18", "18", "18", "ENCANADOR");
+INSERT INTO profissionais_env VALUES ("19", "19", "19", "CARPINTEIRO");
+INSERT INTO profissionais_env VALUES ("20", "20", "20", "MARCENEIRO");
+
 
 INSERT INTO reg_histórico VALUES ('1', '3245', '2015-04-05', 'JADLOG', '1');
 INSERT INTO reg_histórico VALUES ('2', '7860', '2016-05-12', 'TechNova', '2');
@@ -484,4 +492,3 @@ INSERT INTO vagas_emprego VALUES ("17", "Engenheiro de Planejamento", "Planejar 
 INSERT INTO vagas_emprego VALUES ("18", "Auxiliar de Obras", "Apoiar atividades gerais", "Obra", "19", "18", "18");
 INSERT INTO vagas_emprego VALUES ("19", "Engenheiro Hidráulico", "Projetar sistemas hidráulicos", "Escritório", "20", "19", "19");
 INSERT INTO vagas_emprego VALUES ("20", "Pedreiro", "Assentar blocos e rebocar paredes", "Obra", "21", "20", "20");
-
