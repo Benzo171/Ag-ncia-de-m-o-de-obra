@@ -36,7 +36,10 @@ ALTER TABLE endereço
 ALTER TABLE contrato_temporário
 	CHANGE COLUMN data_fim data_fim DATETIME NOT NULL;
     
+ALTER TABLE info_contato
+	 CHANGE COLUMN celular celular varchar(20);
+    
     
 -- DDL - DROP - TADS049 
 
-DROP DATABASE mydb;
+ DROP DATABASE mydb;
