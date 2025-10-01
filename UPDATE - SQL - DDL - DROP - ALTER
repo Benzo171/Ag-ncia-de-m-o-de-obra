@@ -11,6 +11,9 @@ ALTER TABLE profissionais
 	 ADD COLUMN RG VARCHAR(11) NOT NULL UNIQUE
 		AFTER dataNasc;
         
+ALTER TABLE profissionais
+	CHANGE COLUMN RG RG VARCHAR(14) ; 
+ 
 ALTER TABLE requisitos 
 	CHANGE COLUMN curso_complementar curso_complementar VARCHAR(250) NULL;
 
@@ -42,4 +45,4 @@ ALTER TABLE info_contato
     
 -- DDL - DROP - TADS049 
 
- DROP DATABASE mydb;
+  -- DROP DATABASE mydb;
