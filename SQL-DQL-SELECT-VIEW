@@ -1,0 +1,79 @@
+select emp.nome_emp "Empresa", emp.cnpj "CNPJ", 
+concat("R$", format(cont.valor_hora, 2, 'de_DE'))"Valor por Hora"
+	from contrato_temporário cont
+		inner join empresas_clientes emp on cont.id_contrato = emp.id_contrato			
+				order by emp.cnpj;
+
+create view empContrato as 
+					select emp.nome_emp "Empresa", emp.cnpj "CNPJ", 
+concat("R$", format(cont.valor_hora, 2, 'de_DE'))"Valor por Hora"
+	from contrato_temporário cont
+		inner join empresas_clientes emp on cont.id_contrato = emp.id_contrato			
+				order by emp.cnpj;
+                
+                
+select prof.nome "Nome", prof.profissao "Profissão", 
+date_format(fat.data_pag, '%d/%m/%Y') "Data de pagamento",
+mete.forma_pag "Metódo de pagamento"
+	from  faturamento_pagamento fat
+		inner join profissionais prof on fat.id_pagamento = prof.id_pagamento
+        inner join mete_pag mete on fat.id_pagamento = mete.id_pagamento
+				order by fat.data_pag;
+
+create view paguedata as
+				select prof.nome "Nome", prof.profissao "Profissão", 
+date_format(fat.data_pag, '%d/%m/%Y') "Data de pagamento",
+mete.forma_pag "Metódo de pagamento"
+	from  faturamento_pagamento fat
+		inner join profissionais prof on fat.id_pagamento = prof.id_pagamento
+        inner join mete_pag mete on fat.id_pagamento = mete.id_pagamento
+				order by fat.data_pag;
+                
+
+select prof.nome "Nome", prof.profissao "Profissão", 
+habi.descricao_hab "Descrição de habilidade",
+vag.vagas_disp"Vagas dispóniveis", vag.cargo"Cargo"
+	from  profissionais prof
+		inner join habilidades habi on prof.id_profissionais = habi.id_profissionais
+        inner join vagas_emprego vag on prof.id_vaga = vag.id_vaga
+				order by prof.nome;               
+
+create view ProfHabi as 
+				select prof.nome "Nome", prof.profissao "Profissão", 
+habi.descricao_hab "Descrição de habilidade",
+vag.vagas_disp"Vagas dispóniveis", vag.cargo"Cargo"
+	from  profissionais prof
+		inner join habilidades habi on prof.id_profissionais = habi.id_profissionais
+        inner join vagas_emprego vag on prof.id_vaga = vag.id_vaga
+				order by prof.nome;
+                
+
+select  date_format(cont.data_inicio, '%d/%m/%Y') "Data de início", date_format(cont.data_fim, '%d/%m/%Y') "Data de finalização",
+cli.nome_emp "Nome da Empresa", cli.rep_legal "Nome do Encarregado",
+st.`status` "Status"
+	from  contrato_temporário cont
+		inner join empresas_clientes cli on cont.id_contrato = cli.id_contrato
+        inner join `status` st on cont.id_contrato = st.id_contrato
+				order by st.`status`;  
+                
+create view DataEmpresa as
+					select  date_format(cont.data_inicio, '%d/%m/%Y') "Data de início", date_format(cont.data_fim, '%d/%m/%Y') "Data de finalização",
+cli.nome_emp "Nome da Empresa", cli.rep_legal "Nome do Encarregado",
+st.`status` "Status"
+	from  contrato_temporário cont
+		inner join empresas_clientes cli on cont.id_contrato = cli.id_contrato
+        inner join `status` st on cont.id_contrato = st.id_contrato
+				order by st.`status`;
+                
+                
+select  ent.nota "Nota da avaliação", ent.feedback "Feedback da Avalição",
+vag.desc_func "Descrição da Função", vag.local_trab "Local de trabalho", vag.cargo"Cargo da Vaga"
+	from  entrevista_avaliação ent
+		inner join vagas_emprego vag on ent.id_entrevista = vag.id_entrevista
+				order by ent.nota;
+                
+create view Avaliação as
+	select  ent.nota "Nota da avaliação", ent.feedback "Feedback da Avalição",
+vag.desc_func "Descrição da Função", vag.local_trab "Local de trabalho", vag.cargo"Cargo da Vaga"
+	from  entrevista_avaliação ent
+		inner join vagas_emprego vag on ent.id_entrevista = vag.id_entrevista
