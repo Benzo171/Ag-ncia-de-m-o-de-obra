@@ -1,0 +1,71 @@
+SET SQL_SAFE_UPDATES = 0;
+
+
+update contrato_temporário
+	set valor_hora = valor_hora * 1.25
+		where data_inicio <= "2010-11-20";
+        
+update vagas_emprego 
+  set vagas_disp = 10
+	where cargo = "Carpinteiro";
+
+update vagas_emprego 
+  set vagas_disp = 5
+	where cargo = "Engenheiro Civil";
+    
+update vagas_emprego 
+  set vagas_disp = 16
+	where cargo = "Encanador";      
+
+update vagas_emprego 
+  set vagas_disp = 5
+	where cargo = "Engenheiro Hidráulico";      
+
+update vagas_emprego 
+  set vagas_disp = 20
+	where cargo = "Auxiliar de Obras";      
+ 
+ update vagas_emprego 
+  set vagas_disp = 3
+	where cargo = "Engenheiro Geotécnico";      
+
+ update vagas_emprego 
+  set vagas_disp = 2
+	where cargo = "Técnico em Segurança do Trabalho";
+
+        
+delete from contrato_temporário 
+			where data_inicio between "2001-01-20" and "2009-12-31";
+            
+delete from vagas_emprego
+				where cargo = "Pedreiro";
+                
+delete from vagas_emprego
+				where cargo = "Mestre de Obras";  
+
+delete from telefone
+				where id_telefone = "7";
+                
+delete from telefone
+				where id_telefone = "8";                     
+            
+ delete from telefone
+				where id_telefone = "9";
+ 
+ delete from `status`
+				where `Status` = "Inativo";
+            
+ delete from reg_historico
+				where empresas = "EcoEnergia";            
+ 
+ delete from reg_historico
+				where empresas = "SoftSolutions"; 
+                
+ delete from reg_historico
+				where empresas = "BioHealth";
+                
+ delete from reg_historico
+				where empresas = "MoveFast";                 
+ 
+delete from reg_historico
+				where empresas = "SolarCorp"; 
