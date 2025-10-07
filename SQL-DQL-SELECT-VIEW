@@ -76,4 +76,212 @@ create view Avaliação as
 	select  ent.nota "Nota da avaliação", ent.feedback "Feedback da Avalição",
 vag.desc_func "Descrição da Função", vag.local_trab "Local de trabalho", vag.cargo"Cargo da Vaga"
 	from  entrevista_avaliação ent
-		inner join vagas_emprego vag on ent.id_entrevista = vag.id_entrevista
+		inner join vagas_emprego vag on ent.id_entrevista = vag.id_entrevista;
+                
+select profissionais.nome "Nome do Funcionário", profissionais.profissao "Profissão", 
+date_format(profissionais.dataNasc, '%d/%m/%Y') as "Data de Nascimento",
+endereço.cidade "Cidade" 
+	from profissionais 
+		inner join endereço on endereço.id_Endereço = profissionais.id_profissionais
+			order by profissionais.nome;
+
+create view DadosFunc as
+select profissionais.nome "Nome do Funcionário", profissionais.profissao "Profissão", 
+date_format(profissionais.dataNasc, '%d/%m/%Y') as "Data de Nascimento",
+endereço.cidade "Cidade" 
+	from profissionais 
+		inner join endereço on endereço.id_Endereço = profissionais.id_profissionais
+			order by profissionais.nome;
+            
+            
+SELECT
+    p.nome AS "Nome do Profissional",
+    p.profissao AS "Profissão",
+    e.rua AS "Rua",
+    e.numero AS "Número",
+    e.complemento AS "Complemento",
+    e.bairro AS "Bairro",
+    e.cidade AS "Cidade",
+    e.uf AS "UF"
+FROM Profissionais p
+INNER JOIN Endereço e ON p.id_profissionais = e.id_profissionais;            
+
+CREATE VIEW View_Profissionais_Detalhes AS
+SELECT
+    p.id_profissionais,
+    p.nome AS Nome_Profissional,
+    p.profissao AS Profissao,
+    p.dataNasc AS Data_Nascimento,
+    p.RG AS RG_Profissional,
+    e.rua AS Endereco_Rua,
+    e.numero AS Endereco_Numero,
+    e.complemento AS Endereco_Complemento,
+    e.bairro AS Endereco_Bairro,
+    e.cidade AS Endereco_Cidade,
+    e.uf AS Endereco_UF,
+    t.numero_tel AS Telefone_Contato
+FROM Profissionais p
+LEFT JOIN Endereço e ON p.id_profissionais = e.id_profissionais
+LEFT JOIN Telefone t ON p.id_profissionais = t.id_profissionais;
+
+
+SELECT
+    p.nome AS "Nome do Profissional",
+    t.numero_tel AS "Número de Telefone"
+FROM Profissionais p
+INNER JOIN Telefone t ON p.id_profissionais = t.id_profissionais;
+
+CREATE VIEW View_Vagas_Requisitos_Completos AS
+SELECT
+    ve.id_vaga,
+    ve.cargo AS Cargo_Vaga,
+    ve.desc_func AS Descricao_Funcao,
+    ve.Local_trab AS Local_Trabalho,
+    ve.vagas_disp AS Vagas_Disponiveis,
+    r.formacao AS Requisito_Formacao,
+    r.experiencia AS Requisito_Experiencia,
+    r.curso_complementar AS Requisito_Curso_Complementar
+FROM Vagas_emprego ve
+LEFT JOIN Requisitos r ON ve.id_vaga = r.id_vaga;
+
+
+SELECT
+    ve.cargo AS "Cargo da Vaga",
+    ve.desc_func AS "Descrição da Função",
+    r.formacao AS "Formação Necessária",
+    r.experiencia AS "Experiência Requerida",
+    r.curso_complementar AS "Curso Complementar"
+FROM Vagas_emprego ve
+INNER JOIN Requisitos r ON ve.id_vaga = r.id_vaga;
+
+
+SELECT
+    ec.nome_emp AS "Nome da Empresa",
+    ec.cnpj AS "CNPJ",
+    ic.email AS "Email de Contato",
+    ic.celular AS "Celular de Contato"
+FROM Empresas_clientes ec
+INNER JOIN Info_contato ic ON ec.cnpj = ic.cnpj;
+
+
+CREATE VIEW View_Empresas_Contato_Endereco AS
+SELECT
+    ec.cnpj AS CNPJ_Empresa,
+    ec.nome_emp AS Nome_Empresa,
+    ec.rep_legal AS Representante_Legal,
+    ic.email AS Email_Contato,
+    ic.celular AS Celular_Contato,
+    ee.rua AS Endereco_Empresa_Rua,
+    ee.numero AS Endereco_Empresa_Numero,
+    ee.complemento AS Endereco_Empresa_Complemento,
+    ee.bairro AS Endereco_Empresa_Bairro,
+    ee.cidade AS Endereco_Empresa_Cidade,
+    ee.uf AS Endereco_Empresa_UF
+FROM Empresas_clientes ec
+LEFT JOIN Info_contato ic ON ec.cnpj = ic.cnpj
+LEFT JOIN Endereço_emp ee ON ec.cnpj = ee.cnpj;
+
+SELECT
+    pe.profissionais_env AS "Profissional Envolvido",
+    ct.valor_hora AS "Valor por Hora do Contrato",
+    ct.data_inicio AS "Data de Início do Contrato",
+    ct.data_fim AS "Data de Fim do Contrato"
+FROM Profissionais_env pe
+INNER JOIN Contrato_temporário ct ON pe.id_contrato = ct.id_contrato;
+
+CREATE VIEW View_Contratos_Ativos_Empresas AS
+SELECT
+    ct.id_contrato AS ID_Contrato,
+    ct.data_inicio AS Data_Inicio_Contrato,
+    ct.data_fim AS Data_Fim_Contrato,
+    ct.valor_hora AS Valor_Hora_Contrato,
+    s.Status AS Status_Contrato,
+    ec.nome_emp AS Nome_Empresa_Cliente,
+    ec.cnpj AS CNPJ_Empresa_Cliente
+FROM Contrato_temporário ct
+INNER JOIN Status s ON ct.id_contrato = s.id_contrato
+INNER JOIN Empresas_clientes ec ON ct.id_contrato = ec.id_contrato
+WHERE s.Status = 'Ativo';
+
+
+SELECT
+    fp.detalhe_transa AS "Detalhe da Transação",
+    fp.data_pag AS "Data do Pagamento",
+    mp.forma_pag AS "Forma de Pagamento"
+FROM Faturamento_pagamento fp
+INNER JOIN Mete_pag mp ON fp.id_pagamento = mp.id_pagamento;
+
+
+SELECT
+    ve.cargo AS "Cargo",
+    ea.nota AS "Nota da Entrevista",
+    ea.feedback AS "Feedback da Entrevista"
+FROM Vagas_emprego ve
+INNER JOIN Entrevista_avaliação ea ON ve.id_entrevista = ea.id_entrevista;
+
+
+SELECT
+    rh.empresas AS "Empresa",
+    rh.valor_pago AS "Valor Pago",
+    rh.data AS "Data do Registro",
+    ct.data_inicio AS "Início do Contrato"
+FROM Reg_Histórico rh
+INNER JOIN Contrato_temporário ct ON rh.id_contrato = ct.id_contrato;
+
+
+SELECT
+    p.nome AS "Nome do Profissional",
+    h.descricao_hab AS "Habilidade",
+    ve.cargo AS "Cargo da Vaga"
+FROM Profissionais p
+INNER JOIN Habilidades h ON p.id_profissionais = h.id_profissionais
+INNER JOIN Vagas_emprego ve ON p.id_vaga = ve.id_vaga;
+
+
+SELECT
+    ec.nome_emp AS "Nome da Empresa",
+    ee.rua AS "Rua da Empresa",
+    ee.numero AS "Número da Empresa",
+    ee.cidade AS "Cidade da Empresa",
+    ee.uf AS "UF da Empresa"
+FROM Empresas_clientes ec
+inner JOIN Endereço_emp ee ON ec.cnpj = ee.cnpj;
+
+
+SELECT
+    ct.id_contrato AS "ID do Contrato",
+    ct.data_inicio AS "Data de Início",
+    ct.data_fim AS "Data de Fim",
+    ct.valor_hora AS "Valor por Hora",
+    s.Status AS "Status do Contrato"
+FROM Contrato_temporário ct
+INNER JOIN Status s ON ct.id_contrato = s.id_contrato
+WHERE s.Status = 'Ativo';
+
+
+SELECT
+    nome AS "Nome do Profissional",
+    profissao AS "Profissão",
+    dataNasc AS "Data de Nascimento"
+FROM Profissionais
+WHERE dataNasc < '1990-01-01';
+
+
+SELECT
+    cargo AS "Cargo",
+    SUM(vagas_disp) AS "Total de Vagas Disponíveis"
+FROM Vagas_emprego
+GROUP BY cargo
+ORDER BY "Total de Vagas Disponíveis" DESC;
+
+
+SELECT
+    p.nome AS "Nome do Profissional",
+    p.profissao AS "Profissão",
+    fae.comentario AS "Comentário da Avaliação",
+    fae.classificacao AS "Classificação da Avaliação",
+    fae.data_ava AS "Data da Avaliação"
+FROM Profissionais p
+INNER JOIN Vagas_emprego ve ON p.id_vaga = ve.id_vaga
+INNER JOIN feedback_avaliação_emp fae ON ve.id_ava = fae.id_ava;
+
