@@ -55,17 +55,39 @@ delete from telefone
  delete from `status`
 				where `Status` = "Inativo";
             
- delete from reg_historico
+ delete from reg_histórico
 				where empresas = "EcoEnergia";            
  
- delete from reg_historico
+ delete from reg_histórico
 				where empresas = "SoftSolutions"; 
                 
- delete from reg_historico
+ delete from reg_histórico
 				where empresas = "BioHealth";
                 
- delete from reg_historico
+ delete from reg_histórico
 				where empresas = "MoveFast";                 
  
-delete from reg_historico
+delete from reg_histórico
 				where empresas = "SolarCorp"; 
+                
+                
+UPDATE Endereço_emp SET cnpj = '00.623.904/0001-73' WHERE id_endereco = 1;
+UPDATE Endereço_emp SET cnpj = '11.123.456/0001-01' WHERE id_endereco = 2;
+UPDATE Endereço_emp SET cnpj = '22.234.567/0001-02' WHERE id_endereco = 3;
+UPDATE Endereço_emp SET cnpj = '33.345.678/0001-03' WHERE id_endereco = 4;
+UPDATE Endereço_emp SET cnpj = '44.456.789/0001-04' WHERE id_endereco = 5;
+UPDATE Endereço_emp SET cnpj = '55.567.890/0001-05' WHERE id_endereco = 6;
+UPDATE Endereço_emp SET cnpj = '66.678.901/0001-06' WHERE id_endereco = 7;
+UPDATE Endereço_emp SET cnpj = '77.789.012/0001-07' WHERE id_endereco = 8;
+UPDATE Endereço_emp SET cnpj = '88.890.123/0001-08' WHERE id_endereco = 9;
+UPDATE Endereço_emp SET cnpj = '99.901.234/0001-09' WHERE id_endereco = 10;
+UPDATE Endereço_emp SET cnpj = '00.123.456/0001-10' WHERE id_endereco = 11;
+UPDATE Endereço_emp SET cnpj = '11.234.567/0001-11' WHERE id_endereco = 12;
+UPDATE Endereço_emp SET cnpj = '22.345.678/0001-12' WHERE id_endereco = 13;
+UPDATE Endereço_emp SET cnpj = '33.456.789/0001-13' WHERE id_endereco = 14;
+UPDATE Endereço_emp SET cnpj = '44.567.890/0001-14' WHERE id_endereco = 15;
+UPDATE Endereço_emp SET cnpj = '55.678.901/0001-15' WHERE id_endereco = 16;
+UPDATE Endereço_emp SET cnpj = '66.789.012/0001-16' WHERE id_endereco = 17;
+UPDATE Endereço_emp SET cnpj = '77.890.123/0001-17' WHERE id_endereco = 18;
+UPDATE Endereço_emp SET cnpj = '88.901.234/0001-18' WHERE id_endereco = 19;
+UPDATE Endereço_emp SET cnpj = '99.012.345/0001-19' WHERE id_endereco = 20;                
